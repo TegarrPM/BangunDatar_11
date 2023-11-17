@@ -1,4 +1,7 @@
 import 'package:bangundatar_kelasb/page/persegi_page.dart';
+import 'package:bangundatar_kelasb/page/persegipanjang_page.dart';
+import 'package:bangundatar_kelasb/page/segitiga_page.dart';
+import 'package:bangundatar_kelasb/page/belahketupat_page.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -25,21 +28,47 @@ class HomePage extends StatelessWidget {
                     imageAsset: "assets/persegi.jpg", title: "Persegi"),
               )),
               Expanded(
+                  child: InkWell(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PersegiPanjangPage()));
+                },
+                child: CustomMenu(
+                    imageAsset: "assets/persegipanjang.jpg",
+                    title: "Persegi Panjang"),
+              )),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                  child: InkWell(
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => SegitigaPage()));
+                    },
+                    child: CustomMenu(
+                        imageAsset: "assets/segitiga.png", title: "Segitiga"),
+                  )),
+              Expanded(
                   child: CustomMenu(
-                      imageAsset: "assets/persegipanjang.jpg",
-                      title: "Persegi Panjang")),
+                      imageAsset: "assets/trapesium.png", title: "Trapesium")),
             ],
           ),
           Expanded(
-              child: CustomMenu(
-                  imageAsset: "assets/segitiga.png", title: "Segitiga")),
-          Expanded(
-              child: CustomMenu(
-                  imageAsset: "assets/trapesium.png", title: "Trapesium")),
+              child: InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => BelahKetupatPage()));
+                },
+                child: CustomMenu(
+                    imageAsset: "assets/belahketupat.png.", title: "Belah Ketupat"),
+              )),
           Expanded(
               child: CustomMenu(
                   imageAsset: "assets/lingkaran.png.", title: "Lingkaran")),
         ],
+
       ),
     );
   }
